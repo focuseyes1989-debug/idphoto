@@ -1,0 +1,11 @@
+{
+  "version": "0.1.1",
+  "notes": "Maintenance release for the initial signed GitHub Releases update rollout.\n\n- Includes the photo editing, mixed-sheet printing and editable project features from 0.1.0.\n- Update through Help > Check for Updates; save open photos as a project before installing.\n",
+  "pub_date": "2026-10-16T11:36:49.216446Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTcVBPVUtKWmU4ZW4vVjZjU255Z2YrV2lHMGo2UTYvNGlSWXdMbnlWUkhLNHpCelpvVGNOUzliOVNaY3gwMG53WmdwSURveStDMWx4TzM3RlBISmovSWw5eCt5OTJtWFFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTUwNTg0CWZpbGU6SUQgUGhvdG8gU3R1ZGlvXzAuMS4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjEuMQo4ZHY1UlZscHF1Vm01ZGRlUGRmdlJPRStkeU5NTGdoU0J3QUMwNElZUko2OVYxOCtPTFEreGJkamIrYTRsUzgrMzlMQnpwRjAvdU9JR3pqakNvU1VDQT09Cg==",
+      "url": "https://github.com/focuseyes1989-debug/idphoto/releases/download/v0.1.1/ID.Photo.Studio_0.1.1_x64-setup.exe"
+    }
+  }
+}

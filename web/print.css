@@ -1,0 +1,7 @@
+#printPage{display:none}
+@media print{
+ html,body{margin:0!important;padding:0!important;background:white!important;overflow:visible!important;display:block!important;color-scheme:light;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+ body>*{display:none!important}
+ body>#printPage{display:block!important;margin:0;padding:0;break-inside:avoid;overflow:hidden}
+ #printSheet{display:block;max-width:none;object-fit:fill;margin:0;padding:0}
+}

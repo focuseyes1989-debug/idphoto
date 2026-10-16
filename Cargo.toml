@@ -1,0 +1,15 @@
+[workspace]
+members = ["src-tauri"]
+resolver = "2"
+
+# Keep local CPU inference responsive while developing the UI.
+[profile.dev.package.tract-core]
+opt-level = 3
+[profile.dev.package.tract-linalg]
+opt-level = 3
+[profile.dev.package.tract-data]
+opt-level = 3
+[profile.dev.package.tract-onnx]
+opt-level = 3
+[profile.dev.package.tract-hir]
+opt-level = 3

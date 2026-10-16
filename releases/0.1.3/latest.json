@@ -1,0 +1,11 @@
+{
+  "version": "0.1.3",
+  "notes": "Signed online-update rollout for ID Photo Studio.\n\n- Update feed uses final published release URLs and normalized installer asset names.\n- Saves editable projects before installing an update.\n- Includes multi-photo editing, background removal, adjustments, mixed-photo sheets and native printing.\n",
+  "pub_date": "2026-10-16T11:44:52.461074Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTcVBPVUtKWmU4ZXFOc2llOGwyTmVDZGFaQjd4QUc3R3VocHpMd044V3NOcFFJM0lZRmZUdGpOVldCQU5wcjhEaVM0VW80Wm00MUo1bDM5cmg1T05lV1ByODN4R0w5OHdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTUxMDU3CWZpbGU6SUQgUGhvdG8gU3R1ZGlvXzAuMS4zX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjEuMwpmbzRGeHJ1dFYzbkVaSldoaENEUTVpQ3hMMnEyRzhtaXZ2d0Nuenl0WVVWMkpDazNsT0hMOVR6QXVSTGVscy9QMGJJUFhEd1R4Sy81d0Y5Z1JaaW1DZz09Cg==",
+      "url": "https://github.com/focuseyes1989-debug/idphoto/releases/download/v0.1.3/ID.Photo.Studio_0.1.3_x64-setup.exe"
+    }
+  }
+}

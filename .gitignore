@@ -1,0 +1,17 @@
+/src-tauri/target/
+
+# Private updater signing keys must never be committed.
+*.key
+*.key.password
+
+# Built release installers stay local; publish them as GitHub Release assets.
+/releases/**/*.exe
+/releases/**/*.sig
+**/__pycache__/
+
+# Local QA photos, projects and build diagnostics are not source.
+/releases/qa/
+*.pdb
+
+# Generated Tauri schema files.
+/src-tauri/gen/

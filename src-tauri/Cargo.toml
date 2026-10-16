@@ -1,0 +1,26 @@
+[package]
+name = "id-photo-editor"
+version = "0.1.4"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri-plugin-updater = { version = "2.14", default-features = false, features = ["rustls-tls"] }
+tauri = { version = "2", features = [] }
+serde_json = "1"
+serde = { version = "1", features = ["derive"] }
+image = { version = "0.25", default-features = false, features = ["jpeg", "png", "webp"] }
+base64 = "0.22"
+arboard = "3"
+zip = { version = "9", default-features = false }
+rfd = "0.15"
+png = "0.18"
+tract-onnx = "0.23.8"
+anyhow = "1"
+
+[target.'cfg(windows)'.dependencies]
+webview2-com = "0.39.1"
+windows-core = "0.62.2"
+windows-sys = { version = "0.61.2", features = ["Win32_UI_Input_KeyboardAndMouse", "Win32_Graphics_Gdi", "Win32_Graphics_Printing", "Win32_Storage_Xps"] }

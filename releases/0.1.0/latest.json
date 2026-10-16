@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "notes": "First signed Windows release of ID Photo Studio.\n\n- Multi-photo editing with crop, resize, free rotation and local background removal.\n- Levels, Curves and Selective Color adjustments.\n- Mixed-photo sheets, paper sizes, margins, DPI, quantities and native printing.\n- PNG Save/Save As and self-contained editable projects.\n- Signed online updates from GitHub Releases.\n\nInstall the x64 setup executable once. Future versions can be installed through Help > Check for Updates.\n",
+  "pub_date": "2026-10-16T11:34:08.416086Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTcVBPVUtKWmU4ZXRYSkRwckxmNlN0STdHcVcxeDVUNHJ4aDAzSWJNUXNIRmE3dEFiQVZ2L2xqZE1PbzdTb2MzbkhrazRNTkhPY1M0ZFdUZHdEVkV1K0JwVU04U2tLZndRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTUwNDE0CWZpbGU6SUQgUGhvdG8gU3R1ZGlvXzAuMS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjEuMApXdCszc1BsRnVSY0VXWVBzMGQzVUV2SE1EUlExcXlYclVOL1M3Y3hjMXNqcURNL2swaTF3NTQxaVZFUzI5bjRWVnhGVjRVdFB3OVJtazhBU0ozbVBCZz09Cg==",
+      "url": "https://github.com/focuseyes1989-debug/idphoto/releases/download/v0.1.0/ID.Photo.Studio_0.1.0_x64-setup.exe"
+    }
+  }
+}

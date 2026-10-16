@@ -1,0 +1,11 @@
+{
+  "version": "0.1.2",
+  "notes": "Fix the initial GitHub Releases update feed.\n\n- Installer download links use GitHub asset filenames exactly, including GitHub filename normalization.\n- Signed Windows updates preserve editable projects before installation.\n- Photo editing and print-layout features remain available.\n",
+  "pub_date": "2026-10-16T11:42:32.878291Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTcVBPVUtKWmU4ZXJOalpYaEp3RlhPODZZMEJuRzhoV0hsN3hOYkR3Z21MNU52UDZCTmEzVS9BR1RtZ3VTWnkvdGdvQ1hKcjlCRldDUWhDTDFQRWQ5T0VrS2ZzRFhyUndvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTUwOTA4CWZpbGU6SUQgUGhvdG8gU3R1ZGlvXzAuMS4yX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjEuMgppNngwcHVSY1NCVGluSzhOOWVuVU9kRHc0SHIzT0Q1cWRsNXNhL1VCekgxaEZtdFJIbVpQV0R1aWgxa294K1hBYTNhVHBDLzdIa3RtaURScmtEdGdEdz09Cg==",
+      "url": "https://github.com/focuseyes1989-debug/idphoto/releases/download/v0.1.2/ID.Photo.Studio_0.1.2_x64-setup.exe"
+    }
+  }
+}
