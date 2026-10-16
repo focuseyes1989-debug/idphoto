@@ -1,0 +1,11 @@
+{
+  "version": "0.1.4",
+  "notes": "ID Photo Studio 0.1.4\n\n- Automatically split mixed photo quantities across multiple sheets.\n- Scroll all sheets in the canvas and Print dialog, with zoom, drag and Fit to canvas.\n- Show prepared canvas previews immediately and cache unchanged print previews.\n- Link/unlink photo quantities and set separate column and row spacing.\n- Add Undo, Redo, Copy, Cut and Paste with editable history.\n- Disable sheet preview when no photos are open; refine panel alignment.\n- Fix Print dialog refresh/reopen failures and Ctrl+P access.\n\nPrint and export retain full resolution. Multi-sheet exports use a ZIP of PNG pages.\n",
+  "pub_date": "2026-10-16T16:59:26.018126Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTcVBPVUtKWmU4ZXRUV3M3VVAvZWJHY3d1djZadG9hNllNT3RnalBZWUFpdlZaQjcwZE13amVkZGNKbXpSOFJvTjNVQitBKzdSdEVpQWkvQ1JaWi9WcUhHUUYxc2RZSFFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTY5OTM0CWZpbGU6SUQgUGhvdG8gU3R1ZGlvXzAuMS40X3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjEuNAo4eVZQNVp6RDlrUDZFUTZOWkR0QmRuTkxPK1BOc01DanpkN3N2eUwxbm5OeGdodHI2UEZmSVh4QzdydmRwUmExdklPNDJiL3BJdGE4amNMK2xJOEZBZz09Cg==",
+      "url": "https://github.com/focuseyes1989-debug/idphoto/releases/download/v0.1.4/ID.Photo.Studio_0.1.4_x64-setup.exe"
+    }
+  }
+}
