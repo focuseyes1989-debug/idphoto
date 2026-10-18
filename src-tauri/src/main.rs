@@ -16,6 +16,8 @@ mod updater;
 mod printing;
 mod sheet;
 mod tone;
+mod retouch;
+mod brush;
 mod selective_color;
 
 #[derive(Default)]
@@ -297,7 +299,8 @@ fn pixels(mm: f64, dpi: u32) -> u32 {
 }
 fn render(img: &DynamicImage, c: &Crop, sheet: bool) -> Result<DynamicImage, String> {
     let background = background_color(&c.background)?;
-    let img = c.adjustments.apply(rotated(img, c.rotation)?)?;
+    let brushed=if c.adjustments.brushes.is_empty(){None}else{Some(brush::apply(img,&c.adjustments.brushes)?)};
+    let img = c.adjustments.apply(rotated(brushed.as_ref().unwrap_or(img), c.rotation)?)?;
     if ![
         c.x,
         c.y,

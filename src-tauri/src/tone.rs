@@ -2,6 +2,8 @@ use serde::Deserialize;
 #[derive(Clone, Deserialize)]
 #[serde(default)]
 pub struct Tone {
+    pub brushes:Vec<crate::brush::Stroke>,
+    pub retouch: f64,
     pub black: f64,
     pub white: f64,
     pub gamma: f64,
@@ -15,6 +17,8 @@ pub struct Tone {
 impl Default for Tone {
     fn default() -> Self {
         Self {
+            brushes:Vec::new(),
+            retouch: 0.0,
             black: 0.0,
             white: 255.0,
             gamma: 1.0,
@@ -28,6 +32,8 @@ impl Default for Tone {
 impl Tone {
     pub fn lut(&self) -> Result<[u8; 256], String> {
         let t = self;
+        crate::brush::validate(&t.brushes)?;
+        if !t.retouch.is_finite()||!(0.0..=100.0).contains(&t.retouch){return Err("Invalid retouch strength".into());}
         if ![t.black, t.white, t.gamma, t.output_black, t.output_white]
             .into_iter()
             .chain(t.curve)
@@ -89,10 +95,11 @@ impl Tone {
         let mut luts = [master;3];
         for (i,name) in ["red","green","blue"].iter().enumerate() {if let Some(channel)=self.channels.get(*name) {let lut=channel.lut()?; luts[i]=std::array::from_fn(|v|lut[master[v] as usize]);}}
         let lut=&luts;
-        if selective.is_none() && lut.iter().all(|l|l.iter().enumerate().all(|(i,v)|i==*v as usize)) {
+        if self.retouch==0.0 && selective.is_none() && lut.iter().all(|l|l.iter().enumerate().all(|(i,v)|i==*v as usize)) {
             return Ok(image);
         }
         let mut rgba = image.to_rgba8();
+        crate::retouch::apply(&mut rgba,self.retouch)?;
         for pixel in rgba.pixels_mut() {
             for c in 0..3 {
                 pixel[c] = lut[c][pixel[c] as usize];

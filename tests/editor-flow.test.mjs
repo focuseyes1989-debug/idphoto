@@ -276,6 +276,25 @@ test('editing preserves size, rotation and background through export and restore
 
  await el('menuExportPhoto').onclick();assert.equal(exported.docId,1);assert.equal(exported.crop.width_mm,40);
 
+ el('menuRetouch').onclick();assert.equal(el('retouchDialog').open,true);
+ el('retouchStrength').value='55';el('retouchStrength').oninput();el('retouchApply').onclick();
+ await el('menuExportPhoto').onclick();assert.equal(exported.crop.adjustments.retouch,55);
+ await el('menuUndo').onclick();await el('menuExportPhoto').onclick();assert.equal(exported.crop.adjustments.retouch??0,0);
+ await el('menuRedo').onclick();await el('menuExportPhoto').onclick();assert.equal(exported.crop.adjustments.retouch,55);
+ el('menuRetouch').onclick();el('retouchStrength').value='90';el('retouchStrength').oninput();el('retouchCancel').onclick();
+ await el('menuExportPhoto').onclick();assert.equal(exported.crop.adjustments.retouch,55);
+ const originalCrop=JSON.stringify(exported.crop);
+ el('toolZoom').onclick();assert.equal(el('panelZoom').hidden,false);el('photoZoomIn').onclick();assert.equal(el('photoZoomValue').textContent,'125%');
+ await el('menuExportPhoto').onclick();assert.equal(JSON.stringify(exported.crop),originalCrop);
+ el('photoZoomOut').onclick();assert.equal(el('photoZoomValue').textContent,'100%');el('photoZoomFit').onclick();assert.equal(el('editorViewport').scrollTop,0);
+ el('toolBlur').onclick();assert.equal(el('panelBlur').hidden,false);
+ const brushBox=el('crop').getBoundingClientRect();
+ el('crop').onpointerdown({button:0,clientX:300,clientY:250,pointerId:9});el('crop').onpointerup();
+ await el('menuExportPhoto').onclick();assert.equal(exported.crop.adjustments.brushes.length,1);assert.equal(exported.crop.adjustments.brushes[0].kind,'Blur');
+ await el('menuUndo').onclick();await el('menuExportPhoto').onclick();assert.equal(exported.crop.adjustments.brushes?.length??0,0);
+ await el('menuRedo').onclick();await el('menuExportPhoto').onclick();assert.equal(exported.crop.adjustments.brushes.length,1);
+ el('toolSmudge').onclick();el('crop').onpointerdown({button:0,clientX:300,clientY:250,pointerId:10});el('crop').onpointercancel();
+ await el('menuExportPhoto').onclick();assert.equal(exported.crop.adjustments.brushes.length,1);
  el('sheetMode').value='mixed';el('sheetMode').onchange();
 
  const quantity=index=>el('sheetQuantities').children[index].children[2];

@@ -1,8 +1,10 @@
+import {validBrushes} from './brush.js';
+import {validRetouch,retouchPixels} from './retouch.js';
 import {validSelective,activeSelective,applySelective} from './selective-color.js';
 export const curveInputs=[0,64,128,192,255];
 export const defaultTone=()=>({black:0,white:255,gamma:1,output_black:0,output_white:255,curve:[...curveInputs]});
 export const copyTone=value=>structuredClone(value);
-export function validTone(t){return !!t&&[t.black,t.white,t.gamma,t.output_black,t.output_white,...(t.curve||[])].every(Number.isFinite)&&t.black>=0&&t.white<=255&&t.black<t.white&&t.gamma>=.1&&t.gamma<=5&&t.output_black>=0&&t.output_white<=255&&t.output_black<t.output_white&&Array.isArray(t.curve)&&t.curve.length===5&&t.curve.every(y=>y>=0&&y<=255)&&(!t.points||validPoints(t.points))&&(!t.channels||Object.values(t.channels).every(validTone))&&(!t.selective||validSelective(t.selective));}
+export function validTone(t){return !!t&&(t.brushes===undefined||validBrushes(t.brushes))&&(t.retouch===undefined||validRetouch(t.retouch))&&[t.black,t.white,t.gamma,t.output_black,t.output_white,...(t.curve||[])].every(Number.isFinite)&&t.black>=0&&t.white<=255&&t.black<t.white&&t.gamma>=.1&&t.gamma<=5&&t.output_black>=0&&t.output_white<=255&&t.output_black<t.output_white&&Array.isArray(t.curve)&&t.curve.length===5&&t.curve.every(y=>y>=0&&y<=255)&&(!t.points||validPoints(t.points))&&(!t.channels||Object.values(t.channels).every(validTone))&&(!t.selective||validSelective(t.selective));}
 export function validPoints(p){return Array.isArray(p)&&p.length>=2&&p.length<=16&&p[0][0]===0&&p.at(-1)[0]===255&&p.every((v,i)=>v.length===2&&v.every(Number.isFinite)&&v.every(n=>n>=0&&n<=255)&&(!i||v[0]>p[i-1][0]));}
 export function toneLut(t){
  if(!validTone(t))throw Error('Check Levels and Curves values. Black must be below white.');
@@ -17,8 +19,9 @@ export function toneLut(t){
  });
 }
 export function applyTone(canvas,t){
- const master=toneLut(t),luts=['red','green','blue'].map(c=>{const channel=toneLut(t.channels?.[c]||defaultTone());return Uint8Array.from(master,v=>channel[v]);});const selective=activeSelective(t.selective);if(!selective&&luts.every(lut=>lut.every((v,i)=>v===i)))return;
+ const master=toneLut(t),luts=['red','green','blue'].map(c=>{const channel=toneLut(t.channels?.[c]||defaultTone());return Uint8Array.from(master,v=>channel[v]);});const selective=activeSelective(t.selective);if(!(t.retouch>0)&&!selective&&luts.every(lut=>lut.every((v,i)=>v===i)))return;
  const context=canvas.getContext('2d'),pixels=context.getImageData(0,0,canvas.width,canvas.height);
+ if(t.retouch>0)retouchPixels(pixels.data,canvas.width,canvas.height,t.retouch);
  for(let i=0;i<pixels.data.length;i+=4){pixels.data[i]=luts[0][pixels.data[i]];pixels.data[i+1]=luts[1][pixels.data[i+1]];pixels.data[i+2]=luts[2][pixels.data[i+2]];}
  if(selective)applySelective(pixels.data,t.selective);
  context.putImageData(pixels,0,0);
