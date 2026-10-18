@@ -1,0 +1,3 @@
+ef47b91f81d82eec54dfed0263311e2a95b53c63a31ffa66609a4044f01c6337  ID.Photo.Studio_0.1.5_x64-setup.exe
+84961950bcd8af37a44d02e69b7753c38209aedf86c56674a6bf3b97811ec823  ID.Photo.Studio_0.1.5_x64-setup.exe.sig
+9cfb8d4a6c78efa73b6e799fe1fcdf0c6e3fc28278af89987c352306627db7d4  latest.json

@@ -1,0 +1,11 @@
+{
+  "version": "0.1.5",
+  "notes": "ID Photo Studio 0.1.5\n\n- Add Adjustments > Auto Retouch with strength, Before/After, Apply, Cancel and Undo. Conservative skin-color smoothing preserves facial geometry.\n- Add Blur, Sharpen and Smudge soft brush tools in the left toolbar with size (1-2000 canvas pixels), strength and brush cursor.\n- Cache brush results and process new stroke segments incrementally for faster painting.\n- Add Photo Zoom: click/Alt-click, Ctrl+wheel, drag to pan and Fit to canvas. Viewing zoom does not change crop or export dimensions.\n- Preserve per-photo retouch and brush edits in projects, Undo/Redo, full-resolution export and printing.\n- Align brush tools in the toolbar and add color icons in the Tools menu.\n\nRetouch is skin-color based and can affect similarly colored clothing. Brush and retouch preview results may differ slightly from full-resolution rendering.\n",
+  "pub_date": "2026-10-18T06:58:01.513567Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTcVBPVUtKWmU4ZW5zYW5jM3ZKTVg3bG83eTZLU3BDMzAwWkwvU0ZKVlBlYVYvcFZFUWszeEk5N0JXZHRwQnRhdWY5M3Q4S29HSFR2V3p1UENpU0E1SXNLcEtTRHFvbmdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMzA2NjYwCWZpbGU6SUQgUGhvdG8gU3R1ZGlvXzAuMS41X3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjEuNQpKemdIcE83eVRlekpwcnlzb2FaZE5PcTc4c3d1VXlFNlE0UnRTM2FETlN4bUNtaUdoaEtJWEYwQndtQnZ3Y1BqOHdkU1pIeGwzWGlVMHYvdHFOY2NDQT09Cg==",
+      "url": "https://github.com/focuseyes1989-debug/idphoto/releases/download/v0.1.5/ID.Photo.Studio_0.1.5_x64-setup.exe"
+    }
+  }
+}
